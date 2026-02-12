@@ -4,6 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Andy Cancho | Senior Software Engineer</title>
+<meta name="description" content="Portafolio de Andy Cancho: Java/Spring Boot, Microservicios, Cloud, Docker, RabbitMQ, MySQL, SQL Server, PHP/Laravel." />
 
 <style>
 :root{
@@ -13,82 +14,157 @@
   --text:#eaf0ff;
   --accent:#6ea8ff;
   --accent2:#62f2c5;
-  --border:rgba(255,255,255,.08);
+  --border:rgba(255,255,255,.10);
   --shadow:0 12px 30px rgba(0,0,0,.35);
+  --soft: rgba(255,255,255,.04);
 }
 
 *{box-sizing:border-box}
+html,body{height:100%}
 
 body{
   margin:0;
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-  background:var(--bg);
+  background:
+    radial-gradient(1200px 800px at 20% 10%, rgba(110,168,255,.18), transparent 55%),
+    radial-gradient(900px 700px at 90% 30%, rgba(98,242,197,.12), transparent 60%),
+    var(--bg);
   color:var(--text);
+  line-height:1.55;
 }
+
+a{color:inherit}
 
 .wrap{
   max-width:1100px;
   margin:0 auto;
-  padding:30px 20px 60px;
+  padding:26px 18px 60px;
 }
 
 header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 0;
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(11,18,32,.72);
+  backdrop-filter: blur(10px);
   border-bottom:1px solid var(--border);
 }
 
-header h2{
+.header-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 0;
+  gap:14px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.brand .dot{
+  width:12px;height:12px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+
+.brand h2{
   margin:0;
+  font-size:16px;
+  letter-spacing:.2px;
+}
+
+.brand small{
+  display:block;
+  color:var(--muted);
+  font-size:12px;
+  margin-top:2px;
+}
+
+nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  justify-content:flex-end;
 }
 
 nav a{
   color:var(--muted);
   text-decoration:none;
-  margin-left:20px;
+  padding:8px 10px;
+  border-radius:10px;
+  border:1px solid transparent;
+  background:transparent;
+}
+
+nav a:hover{
+  color:var(--text);
+  border-color:var(--border);
+  background:rgba(255,255,255,.03);
 }
 
 .hero{
-  margin-top:40px;
+  margin-top:22px;
 }
 
 .card{
-  background:var(--card);
+  background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  border:1px solid var(--border);
   border-radius:20px;
-  padding:40px;
+  padding:28px;
   box-shadow:var(--shadow);
 }
 
 .hero-intro-wrapper{
   display:flex;
   align-items:center;
-  gap:40px;
+  gap:26px;
   flex-wrap:wrap;
 }
 
 .profile-photo{
   width:170px;
   height:170px;
-  border-radius:25px;
+  border-radius:22px;
   object-fit:cover;
-  border:2px solid rgba(255,255,255,.1);
-  box-shadow:0 20px 40px rgba(0,0,0,.4);
+  border:2px solid rgba(255,255,255,.12);
+  box-shadow:0 18px 42px rgba(0,0,0,.42);
 }
 
 h1{
-  margin:0 0 15px;
-  font-size:32px;
+  margin:0 0 10px;
+  font-size:30px;
+  letter-spacing:.2px;
 }
 
 .tagline{
   color:var(--muted);
-  max-width:600px;
+  max-width:700px;
+  margin:0;
 }
 
+.kpis{
+  margin-top:14px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.kpi{
+  padding:8px 12px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.02);
+  color:var(--muted);
+  font-size:13px;
+}
+
+.kpi b{color:var(--text);font-weight:700}
+
 .chips{
-  margin-top:20px;
+  margin-top:16px;
   display:flex;
   gap:10px;
   flex-wrap:wrap;
@@ -97,23 +173,25 @@ h1{
 .chip{
   padding:6px 12px;
   border-radius:999px;
-  background:rgba(255,255,255,.05);
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--border);
   font-size:13px;
 }
 
 .cta{
-  margin-top:25px;
+  margin-top:16px;
   display:flex;
-  gap:12px;
+  gap:10px;
   flex-wrap:wrap;
 }
 
 .btn{
-  padding:10px 16px;
+  padding:10px 14px;
   border-radius:12px;
   text-decoration:none;
-  font-weight:600;
+  font-weight:650;
   border:1px solid var(--border);
+  background:rgba(255,255,255,.03);
   color:var(--text);
 }
 
@@ -123,127 +201,344 @@ h1{
   border:none;
 }
 
+.btn:hover{transform:translateY(-1px)}
+
 section{
-  margin-top:60px;
+  margin-top:26px;
 }
 
 .section-title{
-  font-size:22px;
-  margin-bottom:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:12px;
+  margin:22px 0 12px;
 }
 
-.stack-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
+.section-title h3{
+  margin:0;
+  font-size:18px;
 }
 
-.stack-card{
-  background:var(--card);
-  padding:20px;
-  border-radius:15px;
-}
-
-footer{
-  margin-top:60px;
-  border-top:1px solid var(--border);
-  padding-top:20px;
+.section-title span{
   color:var(--muted);
-  text-align:center;
+  font-size:12px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(12, 1fr);
+  gap:14px;
+}
+
+.col-12{grid-column:span 12}
+.col-6{grid-column:span 6}
+.col-4{grid-column:span 4}
+
+.block{
+  padding:18px;
+  border-radius:18px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.02);
+}
+
+.block p{margin:0;color:var(--muted)}
+.block h4{margin:0 0 8px;font-size:15px}
+
+ul{margin:10px 0 0;padding-left:18px;color:var(--muted)}
+li{margin:6px 0}
+
+.project{
+  padding:18px;
+  border-radius:18px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.02);
+}
+
+.project h4{margin:0 0 6px}
+.meta{color:var(--muted);font-size:12px;margin:0 0 10px}
+.tags{display:flex;gap:8px;flex-wrap:wrap}
+.tag{font-size:12px;padding:5px 9px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.03)}
+
+.footer{
+  margin-top:34px;
+  border-top:1px solid var(--border);
+  padding-top:18px;
+  color:var(--muted);
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+  font-size:13px;
+}
+
+@media(max-width:900px){
+  .col-6,.col-4{grid-column:span 12}
 }
 
 @media(max-width:768px){
-  .profile-photo{
-    width:130px;
-    height:130px;
-  }
+  .profile-photo{width:130px;height:130px}
 }
 </style>
 </head>
 
 <body>
 
-<div class="wrap">
-
 <header>
-  <h2>Andy Cancho</h2>
-  <nav>
-    <a href="#stack">Stack</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
+  <div class="wrap header-inner">
+    <div class="brand">
+      <span class="dot" aria-hidden="true"></span>
+      <div>
+        <h2>Andy Cancho</h2>
+        <small>Senior Software Engineer · Java/Spring · Cloud · Microservices</small>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#sobre">Sobre mí</a>
+      <a href="#stack">Stack</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
 </header>
 
-<section class="hero">
-  <div class="card">
-    <div class="hero-intro-wrapper">
-      
-      <!-- FOTO AQUÍ -->
-      <img src="https://dyanjac.github.io/andy-cancho.github.io/assets/foto.jpg" alt="Andy Cancho" class="profile-photo">
+<main class="wrap">
 
-      <div>
-        <h1>Senior Software Engineer</h1>
-        <p class="tagline">
-          Especialista en Java 11/17, Spring Boot, microservicios, RabbitMQ, Docker, 
-          optimización MySQL/SQL Server y desarrollo en PHP (Laravel). 
-          Experiencia en entornos Cloud y On-Premise.
-        </p>
+  <!-- HERO -->
+  <section class="hero" id="sobre">
+    <div class="card">
+      <div class="hero-intro-wrapper">
 
-        <div class="chips">
-          <span class="chip">Java</span>
-          <span class="chip">Spring Boot</span>
-          <span class="chip">Microservicios</span>
-          <span class="chip">RabbitMQ</span>
-          <span class="chip">Docker</span>
-          <span class="chip">MySQL</span>
-          <span class="chip">SQL Server</span>
-          <span class="chip">Laravel</span>
+        <!-- FOTO: sube tu foto como assets/foto.jpg -->
+        <img src="https://dyanjac.github.io/andy-cancho.github.io/assets/foto.jpg" alt="Andy Cancho" class="profile-photo" />
+
+        <div>
+          <h1>Construyo sistemas escalables con microservicios y cloud.</h1>
+          <p class="tagline">
+            Senior Software Engineer (+9 años) especializado en <b>Java 11/17 · Spring Boot</b>,
+            <b>APIs REST</b>, <b>RabbitMQ</b>, <b>Docker</b>, optimización <b>MySQL/SQL Server</b> y
+            desarrollo en <b>PHP/Laravel</b>. Experiencia gestionando entornos <b>Cloud</b> y <b>On-Premise</b>.
+          </p>
+
+          <div class="kpis">
+            <div class="kpi"><b>+9 años</b> en desarrollo</div>
+            <div class="kpi"><b>Microservicios</b> y mensajería asíncrona</div>
+            <div class="kpi"><b>Docker</b> · DEV/QA/PROD</div>
+            <div class="kpi"><b>Cloud + On-Prem</b></div>
+          </div>
+
+          <div class="chips" aria-label="Tecnologías principales">
+            <span class="chip">Java</span>
+            <span class="chip">Spring Boot</span>
+            <span class="chip">Microservices</span>
+            <span class="chip">RabbitMQ</span>
+            <span class="chip">Docker</span>
+            <span class="chip">MySQL</span>
+            <span class="chip">SQL Server</span>
+            <span class="chip">Laravel</span>
+            <span class="chip">React</span>
+          </div>
+
+          <div class="cta">
+            <a class="btn primary" href="mailto:andy.jca@outlook.com?subject=Oportunidad%20Europa%20-%20Andy%20Cancho">Contactar</a>
+            <a class="btn" href="mailto:andy.jca@outlook.com">andy.jca@outlook.com</a>
+            <!-- Sube tu CV al repo y apunta al archivo -->
+            <a class="btn" href="./Andy_Cancho_CV_Ejecutivo.pdf" target="_blank" rel="noreferrer">Ver CV (PDF)</a>
+            <!-- Reemplaza con tus links reales -->
+            <a class="btn" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
         </div>
 
-        <div class="cta">
-          <a class="btn primary" href="mailto:andy.jca@outlook.com">Contactar</a>
-          <a class="btn" href="https://github.com/" target="_blank">GitHub</a>
-          <a class="btn" href="https://linkedin.com/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section id="stack">
+    <div class="section-title">
+      <h3>Stack tecnológico</h3>
+      <span>Principal + complementario</span>
+    </div>
+
+    <div class="grid">
+      <div class="block col-6">
+        <h4>Backend</h4>
+        <ul>
+          <li>Java 11/17, Spring Boot, REST APIs</li>
+          <li>Mensajería asíncrona: RabbitMQ</li>
+          <li>Calidad: JUnit 5, Mockito, SonarQube</li>
+        </ul>
+      </div>
+
+      <div class="block col-6">
+        <h4>Datos & Performance</h4>
+        <ul>
+          <li>MySQL, SQL Server (optimización y modelado)</li>
+          <li>Diseño de consultas, performance y estabilidad en producción</li>
+        </ul>
+      </div>
+
+      <div class="block col-6">
+        <h4>Infraestructura</h4>
+        <ul>
+          <li>Docker · Gestión por ambientes DEV/QA/PROD</li>
+          <li>Cloud + On-Premise · Virtualización</li>
+          <li>Linux / Windows Server</li>
+        </ul>
+      </div>
+
+      <div class="block col-6">
+        <h4>Web</h4>
+        <ul>
+          <li>PHP (Laravel)</li>
+          <li>React, JavaScript, HTML</li>
+          <li>Integración de front con servicios backend</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section id="proyectos">
+    <div class="section-title">
+      <h3>Proyectos destacados</h3>
+      <span>Sin datos sensibles (orientado a empresas en Europa)</span>
+    </div>
+
+    <div class="grid">
+      <div class="project col-4">
+        <h4>Plataforma empresarial de microservicios</h4>
+        <p class="meta">Java · Spring Boot · RabbitMQ · Docker · MySQL</p>
+        <p style="margin:0;color:var(--muted)">
+          Arquitectura de servicios desacoplados con colas asíncronas, despliegues por ambiente y operación en producción.
+        </p>
+        <div class="tags" style="margin-top:12px">
+          <span class="tag">Microservices</span><span class="tag">RabbitMQ</span><span class="tag">Docker</span>
         </div>
       </div>
 
+      <div class="project col-4">
+        <h4>Optimización SQL para operaciones críticas</h4>
+        <p class="meta">MySQL · SQL Server · Performance</p>
+        <p style="margin:0;color:var(--muted)">
+          Mejora de rendimiento en consultas complejas y procesos batch, garantizando estabilidad y tiempos de respuesta.
+        </p>
+        <div class="tags" style="margin-top:12px">
+          <span class="tag">SQL</span><span class="tag">Performance</span><span class="tag">Data</span>
+        </div>
+      </div>
+
+      <div class="project col-4">
+        <h4>Aplicaciones web con Laravel</h4>
+        <p class="meta">PHP · Laravel · Integraciones</p>
+        <p style="margin:0;color:var(--muted)">
+          Desarrollo y mantenimiento de módulos empresariales, integraciones con BD y despliegues en entornos híbridos.
+        </p>
+        <div class="tags" style="margin-top:12px">
+          <span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">Web</span>
+        </div>
+      </div>
     </div>
+  </section>
+
+  <!-- EXPERIENCIA -->
+  <section id="experiencia">
+    <div class="section-title">
+      <h3>Experiencia</h3>
+      <span>Resumen ejecutivo</span>
+    </div>
+
+    <div class="grid">
+      <div class="block col-12">
+        <h4>Close2u · Senior Java Developer <span style="color:var(--muted);font-weight:500">— Feb 2023 · Actualidad</span></h4>
+        <ul>
+          <li>Diseño e implementación de microservicios (Spring Boot, APIs REST).</li>
+          <li>Procesamiento asíncrono con RabbitMQ.</li>
+          <li>Despliegues Docker en DEV/QA/PROD, soporte y estabilidad en producción.</li>
+          <li>Mejora de calidad: pruebas unitarias, cobertura y SonarQube.</li>
+          <li>Administración de entornos cloud y virtualizados.</li>
+        </ul>
+      </div>
+
+      <div class="block col-12">
+        <h4>Compudiskett S.R.L · Analista Programador <span style="color:var(--muted);font-weight:500">— Ene 2017 · Feb 2023</span></h4>
+        <ul>
+          <li>Desarrollo web en PHP (Laravel) y Java.</li>
+          <li>Administración y optimización de MySQL y SQL Server.</li>
+          <li>Gestión de servidores Cloud y On-Premise (Apache, IIS).</li>
+          <li>Soporte de infraestructura: correo corporativo, telefonía IP y redes.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios">
+    <div class="section-title">
+      <h3>Servicios / Lo que puedo aportar</h3>
+      <span>Ideal para roles en España/Europa</span>
+    </div>
+
+    <div class="grid">
+      <div class="block col-6">
+        <h4>Arquitectura & Backend</h4>
+        <p>Microservicios, APIs REST, integración entre sistemas, mensajería asíncrona y buenas prácticas.</p>
+      </div>
+
+      <div class="block col-6">
+        <h4>Cloud, Docker & Operación</h4>
+        <p>Gestión de ambientes, despliegues, configuración por entorno y soporte productivo.</p>
+      </div>
+
+      <div class="block col-6">
+        <h4>Datos & Performance</h4>
+        <p>Optimización SQL, modelado, estabilidad de procesos batch y mejora de tiempos de respuesta.</p>
+      </div>
+
+      <div class="block col-6">
+        <h4>Calidad & Mantenibilidad</h4>
+        <p>Pruebas unitarias, cobertura, refactorización, y calidad de código con SonarQube.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="section-title">
+      <h3>Contacto</h3>
+      <span>Disponible para entrevistas remotas</span>
+    </div>
+
+    <div class="grid">
+      <div class="block col-12">
+        <p style="margin:0;color:var(--muted)">
+          ¿Quieres conversar sobre una oportunidad en España/Europa?
+        </p>
+        <div class="cta" style="margin-top:12px">
+          <a class="btn primary" href="mailto:andy.jca@outlook.com?subject=Oportunidad%20Europa%20-%20Andy%20Cancho">Enviar email</a>
+          <a class="btn" href="tel:+51915923681">Llamar</a>
+          <!-- Reemplaza con tus links reales -->
+          <a class="btn" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    <div>© <span id="year"></span> Andy Cancho</div>
+    <div>Hecho para GitHub Pages · HTML/CSS</div>
   </div>
-</section>
 
-<section id="stack">
-  <div class="section-title">Stack Tecnológico</div>
+</main>
 
-  <div class="stack-grid">
-    <div class="stack-card">
-      <strong>Backend</strong>
-      <p>Java 11/17, Spring Boot, REST APIs, RabbitMQ</p>
-    </div>
-    <div class="stack-card">
-      <strong>Base de Datos</strong>
-      <p>MySQL, SQL Server, Optimización SQL</p>
-    </div>
-    <div class="stack-card">
-      <strong>Infraestructura</strong>
-      <p>Docker, Cloud, On-Premise, Virtualización</p>
-    </div>
-    <div class="stack-card">
-      <strong>Web</strong>
-      <p>PHP (Laravel), React, JavaScript</p>
-    </div>
-  </div>
-</section>
-
-<section id="contacto">
-  <div class="section-title">Contacto</div>
-  <p>Email: andy.jca@outlook.com</p>
-  <p>Disponible para oportunidades remotas en Europa.</p>
-</section>
-
-<footer>
-  © 2025 Andy Cancho
-</footer>
-
-</div>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
