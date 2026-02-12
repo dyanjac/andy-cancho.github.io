@@ -279,6 +279,36 @@ li{margin:6px 0}
 @media(max-width:768px){
   .profile-photo{width:130px;height:130px}
 }
+
+.hero-content{
+  display:flex;
+  align-items:center;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+.hero-text{
+  flex:1;
+  min-width:280px;
+}
+
+.profile-photo{
+  width:170px;
+  height:170px;
+  object-fit:cover;
+  border-radius:20px;
+  border:2px solid rgba(255,255,255,.1);
+  box-shadow:0 20px 40px rgba(0,0,0,.4);
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .hero-content{
+    flex-direction:column;
+    text-align:center;
+  }
+}
+  
 </style>
 </head>
 
@@ -314,15 +344,24 @@ li{margin:6px 0}
 
 
         <div>
-                  <!-- FOTO: sube tu foto como assets/foto.jpg -->
-        <img src="https://dyanjac.github.io/andy-cancho.github.io/assets/foto.jpg" alt="Andy Cancho" class="profile-photo" />
-      
-          <h1>Construyo sistemas escalables con microservicios y cloud.</h1>
-          <p class="tagline">
-            Senior Software Engineer (+9 años) especializado en <b>Java 11/17 · Spring Boot</b>,
-            <b>APIs REST</b>, <b>RabbitMQ</b>, <b>Docker</b>, optimización <b>MySQL/SQL Server</b> y
-            desarrollo en <b>PHP/Laravel</b>. Experiencia gestionando entornos <b>Cloud</b> y <b>On-Premise</b>.
-          </p>
+        <div class="hero-content">
+              
+              <!-- FOTO -->
+              <img src="assets/foto.jpg" 
+                   alt="Andy Cancho" 
+                   class="profile-photo" />
+            
+              <!-- TEXTO -->
+              <div class="hero-text">
+                <h1>Construyo sistemas escalables con microservicios y cloud.</h1>
+                <p class="tagline">
+                  Senior Software Engineer (+9 años) especializado en <b>Java 11/17 · Spring Boot</b>,
+                  <b>APIs REST</b>, <b>RabbitMQ</b>, <b>Docker</b>, optimización <b>MySQL/SQL Server</b> y
+                  desarrollo en <b>PHP/Laravel</b>. Experiencia gestionando entornos <b>Cloud</b> y <b>On-Premise</b>.
+                </p>
+              </div>
+            
+            </div>
           
           <div class="kpis">
             <div class="kpi"><b>+9 años</b> en desarrollo</div>
